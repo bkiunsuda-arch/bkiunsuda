@@ -1,2 +1,550 @@
-# bkiunsuda
-promosi prodi bki unsuda paciran lamongan
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BKI UNSUDA | Konselor Profesional Berbasis Islam</title>
+  <!-- Google Fonts + Font Awesome CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #fef9f0 0%, #fff7ed 100%);
+      color: #1e2a2f;
+      scroll-behavior: smooth;
+    }
+
+    /* animasi kedip untuk judul utama */
+    @keyframes blink {
+      0% { opacity: 1; text-shadow: 0 0 0px #ff69b4; }
+      50% { opacity: 0.85; text-shadow: 0 0 8px #ff69b4, 0 0 12px #ff99cc; }
+      100% { opacity: 1; text-shadow: 0 0 0px #ff69b4; }
+    }
+
+    .blink-text {
+      animation: blink 1.2s infinite;
+      font-weight: 800;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* navbar sticky modern */
+    .navbar {
+      background: rgba(255, 255, 245, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, #ff69b4, #ffb347);
+      width: 42px;
+      height: 42px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.55rem;
+      background: linear-gradient(120deg, #b34180, #e68a2e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3e2f;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+      transform: translateY(-2px);
+    }
+
+    .btn-register-nav {
+      background: #ff69b4;
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 40px;
+      box-shadow: 0 4px 10px rgba(255,105,180,0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 70px 0 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #2c3e2f;
+      font-weight: 500;
+    }
+
+    .badge-spark {
+      display: inline-block;
+      background: rgba(255,105,180,0.12);
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #b13e6b;
+    }
+
+    /* cards grid */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      margin: 50px 0;
+    }
+
+    .card-modern {
+      background: rgba(255, 255, 250, 0.9);
+      backdrop-filter: blur(2px);
+      border-radius: 42px;
+      padding: 28px 24px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 105, 180, 0.2);
+    }
+
+    .card-modern:hover {
+      transform: translateY(-8px);
+      border-color: #ff69b4;
+      box-shadow: 0 30px 40px -12px rgba(255, 105, 180, 0.2);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .mata-kuliah-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .mata-kuliah-list li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mata-kuliah-list i {
+      color: #ffb347;
+      width: 24px;
+    }
+
+    .table-keunggulan {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-keunggulan td {
+      padding: 14px 8px;
+      border-bottom: 1px solid #ffe0e8;
+      vertical-align: top;
+    }
+
+    .table-keunggulan td:first-child {
+      font-weight: 800;
+      color: #b13e6b;
+      width: 38%;
+    }
+
+    .btn-pink {
+      background: #ff69b4;
+      padding: 14px 32px;
+      border-radius: 50px;
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(255,105,180,0.3);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-pink:hover {
+      background: #e8559e;
+      transform: scale(1.02);
+    }
+
+    .btn-outline-pink {
+      background: transparent;
+      border: 2px solid #ff69b4;
+      color: #ff69b4;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-outline-pink:hover {
+      background: #ff69b4;
+      color: white;
+    }
+
+    .step-flow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .step-item {
+      background: white;
+      border-radius: 60px;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .step-number {
+      background: #ff69b4;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .contact-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+      margin: 35px 0;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 40px;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .contact-card i {
+      font-size: 2rem;
+      color: #ff69b4;
+    }
+
+    footer {
+      background: #1f2a24;
+      color: #e4e0d4;
+      padding: 40px 0 30px;
+      margin-top: 70px;
+      border-radius: 48px 48px 0 0;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .sponsor-img {
+      max-width: 180px;
+      border-radius: 20px;
+      background: white;
+      padding: 8px 16px;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .nav-flex {
+        flex-direction: column;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar sticky modern -->
+<div class="navbar">
+  <div class="container nav-flex">
+    <div class="logo-area">
+      <div class="logo-icon"><i class="fas fa-hand-sparkles"></i></div>
+      <div class="logo-text">BKI UNSUDA</div>
+    </div>
+    <div class="nav-links">
+      <a href="#profil">Profil</a>
+      <a href="#matakuliah">Mata Kuliah</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#pendaftaran">Pendaftaran</a>
+      <a href="#kontak" class="btn-register-nav">Hubungi Kami</a>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <!-- Hero dengan animasi blink -->
+  <div class="hero" data-aos="fade-up">
+    <div class="badge-spark"><i class="fas fa-graduation-cap"></i>   Program Unggulan 2026</div>
+    <h1>
+      <span class="blink-text">🎓 Selamat Datang di RUANG BKI UNSUDA</span><br>
+      <span style="font-size: 1.8rem;">📢 Saatnya bergabung bersama Bimbingan dan Konseling Islam!</span>
+    </h1>
+    <p>Kami siap mencetak lulusan konselor profesional yang kompeten, berakhlak mulia, dan siap kerja di era global.</p>
+    <div style="margin-top: 30px;">
+      <a href="#pendaftaran" class="btn-pink"><i class="fas fa-arrow-right"></i> Daftar Sekarang</a>
+      <a href="#profil" class="btn-outline-pink" style="margin-left: 15px;"><i class="fas fa-info-circle"></i> Eksplor Program</a>
+    </div>
+  </div>
+
+  <!-- Profil Program Studi -->
+  <div id="profil" data-aos="fade-right">
+    <div class="card-modern" style="background: linear-gradient(125deg, #fffaf5, #fff5ec);">
+      <div class="card-icon"><i class="fas fa-university"></i></div>
+      <h2 style="font-size: 1.9rem; margin-bottom: 18px;">👨‍🏫 Profil Program Studi</h2>
+      <p style="font-size: 1.05rem; line-height: 1.5;">BKI UNSUDA adalah salah satu program studi unggulan di <strong>Universitas Sunan Drajat Lamongan</strong> yang berfokus pada pengembangan keilmuan bimbingan dan konseling berbasis nilai-nilai Islam. Kami mengintegrasikan teori konseling modern dengan pendekatan spiritual. Mahasiswa dibekali pengalaman langsung melalui kurikulum yang seimbang antara teori dan praktik, didukung oleh dosen berpengalaman serta lingkungan kampus yang religius.</p>
+    </div>
+  </div>
+
+  <!-- Mata Kuliah Unggulan -->
+  <div id="matakuliah" data-aos="fade-up">
+    <div style="text-align: center; margin: 40px 0 20px;">
+      <h2 style="font-size: 2.1rem;">📚 Mata Kuliah Unggulan</h2>
+      <p style="color: #5a5a4d;">Dapatkan ilmu spesifik yang membuat Anda unggul di dunia kerja:</p>
+    </div>
+    <div class="grid-2col">
+      <div class="card-modern">
+        <ul class="mata-kuliah-list">
+          <li><i class="fas fa-brain"></i> ✅ Psikologi Konseling – Memahami kedalaman jiwa manusia.</li>
+          <li><i class="fas fa-comments"></i> ✅ Teknik Konseling – Menguasai seni berkomunikasi dan solusi.</li>
+          <li><i class="fas fa-users"></i> ✅ Bimbingan & Konseling Kelompok – Dinamika solusi dalam komunitas.</li>
+          <li><i class="fas fa-hand-holding-heart"></i> ✅ Konseling Anak Berkebutuhan Khusus (ABK) – Kepedulian tanpa batas.</li>
+          <li><i class="fas fa-praying-hands"></i> ✅ Tasawuf dan Psikoterapi Islam – Penyembuhan melalui pendekatan spiritual.</li>
+        </ul>
+      </div>
+      <div class="card-modern" style="background: rgba(255,235,215,0.5);">
+        <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <h3>Praktik Langsung & Magang</h3>
+        <p>Kurikulum berbasis outcome, laboratorium konseling modern, serta program magang intensif di sekolah, lembaga psikologi, dan rumah sakit.</p>
+        <br>
+        <i class="fas fa-certificate" style="color:#ffb347;"></i>  Sertifikasi kompetensi konselor muda Islami.
+      </div>
+    </div>
+  </div>
+
+  <!-- Kenapa Memilih BKI UNSUDA + Tabel Keunggulan -->
+  <div id="keunggulan" data-aos="zoom-in">
+    <div style="text-align: center; margin: 30px 0 20px;">
+      <h2>🌟 Kenapa Memilih BKI UNSUDA?</h2>
+      <p>Keunggulan & Manfaat nyata bagi mahasiswa</p>
+    </div>
+    <div class="card-modern">
+      <table class="table-keunggulan">
+        <tr><td>Konselor Profesional</td><td>Kurikulum standar industri yang diakui & uji kompetensi nasional.</td></tr>
+        <tr><td>Kemitraan Luas</td><td>Kerja sama erat dengan dunia usaha dan industri (DUDI) : sekolah, klinik, rumah sakit, lembaga sosial.</td></tr>
+        <tr><td>Fasilitas Modern</td><td>Lab praktik konseling yang lengkap, nyaman, dan ruang micro-teaching dengan teknologi terbaru.</td></tr>
+        <tr><td>Program Intensif</td><td>Magang dan pelatihan untuk kesiapan kerja 100%, pendampingan pembuatan portofolio.</td></tr>
+        <tr><td>Biaya Terjangkau + Beasiswa</td><td>Keringanan biaya dan beasiswa prestasi & kurang mampu tersedia setiap semester.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Alur Pendaftaran -->
+  <div id="pendaftaran" data-aos="fade-left">
+    <div style="text-align: center; margin: 50px 0 20px;">
+      <h2>📝 Alur Pendaftaran</h2>
+      <p>Segera amankan kursi Anda dengan langkah mudah berikut:</p>
+    </div>
+    <div class="step-flow">
+      <div class="step-item"><div class="step-number">1</div> <span><strong>Isi Formulir Online</strong><br>👉 Klik di Sini untuk Daftar</span></div>
+      <div class="step-item"><div class="step-number">2</div> <span><strong>Upload Dokumen Pendukung</strong><br>Lengkapi berkas Anda melalui portal resmi</span></div>
+      <div class="step-item"><div class="step-number">3</div> <span><strong>Verifikasi & Ujian Seleksi</strong><br>Dilakukan secara online/offline</span></div>
+      <div class="step-item"><div class="step-number">4</div> <span><strong>Daftar Ulang & Jadi Mahasiswa BKI</strong><br>Mulai perjalanan sebagai calon konselor profesional</span></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin: 30px 0 20px;">
+      <a href="#" class="btn-pink" style="background: linear-gradient(120deg, #ff69b4, #ff9a5a);"><i class="fas fa-file-alt"></i> Klik di Sini untuk Daftar</a>
+      <a href="https://daftar.ppsd.id" target="_blank" class="btn-outline-pink"><i class="fas fa-upload"></i> Portal Resmi: daftar.ppsd.id</a>
+    </div>
+    <div class="card-modern" style="background: #fff0e5; text-align: center;">
+      <i class="fas fa-clock" style="font-size: 1.8rem; color:#ff69b4;"></i>
+      <p style="font-weight: 500; margin-top: 12px;">Pendaftaran Gelombang 1: Januari – Maret 2026 | Gelombang 2: April – Juni 2026</p>
+    </div>
+  </div>
+
+  <!-- Hubungi Kami + kontak WA, Email dan gambar icon -->
+  <div id="kontak" data-aos="flip-up">
+    <div style="text-align: center; margin: 60px 0 20px;">
+      <h2>📞 Hubungi Kami</h2>
+      <p>Punya pertanyaan? Tim kami siap membantu Anda!</p>
+    </div>
+    <div class="contact-icons">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <div><strong>Email</strong><br>bkiunsuda@gmail.com</div>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+        <div><strong>WhatsApp</strong><br>0857-0883-8201</div>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <div><strong>Kampus UNSUDA</strong><br>Lamongan, Jawa Timur</div>
+      </div>
+    </div>
+    <!-- gambar ikon WA dan sponsor sesuai permintaan -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 35px; align-items: center; margin: 20px 0 30px;">
+      <div style="text-align: center;">
+        <img src="https://iili.io/BrBLTzX.jpg" alt="WhatsApp Icon" width="130" style="border-radius: 30px; box-shadow: 0 8px 18px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.8rem;">Official WhatsApp</p>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://iili.io/BrBto5Q.jpg" alt="Sponsor" width="180" style="border-radius: 24px; background: white; padding: 8px; box-shadow: 0 6px 14px rgba(0,0,0,0.05);">
+        <p style="font-size: 0.8rem;">Didukung Oleh Mitra Strategis</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- motto -->
+  <div style="background: linear-gradient(130deg, #ffefe3, #fff3e8); border-radius: 48px; padding: 28px 20px; text-align: center; margin: 40px 0 20px;" data-aos="fade">
+    <h3 style="color: #b3416c;"><i class="fas fa-star-of-life"></i> BKI UNSUDA: Menjadi Konselor Profesional Berlandaskan Nilai Keislaman.</h3>
+    <p style="margin-top: 12px;">"Membimbing dengan hati, menyembuhkan dengan akhlak mulia, berkarya untuk umat"</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-flex">
+    <div>
+      <h3 style="font-weight: 700; margin-bottom: 12px;">BKI UNSUDA</h3>
+      <p>Program Studi Bimbingan dan Konseling Islam<br>Universitas Sunan Drajat Lamongan</p>
+      <p><i class="fas fa-phone-alt"></i> +62 857-0883-8201</p>
+    </div>
+    <div>
+      <p>© 2026 BKI UNSUDA | All rights reserved<br>Mencetak generasi konselor Islami unggulan</p>
+      <div style="margin-top: 14px;">
+        <i class="fab fa-instagram" style="margin-right: 12px; font-size: 1.4rem;"></i>
+        <i class="fab fa-facebook" style="margin-right: 12px; font-size: 1.4rem;"></i>
+        <i class="fab fa-youtube" style="font-size: 1.4rem;"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AOS initialization -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 60
+  });
+  // smooth scroll untuk internal anchor
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  // efek tambahan untuk tombol daftar eksternal
+  const daftarButtons = document.querySelectorAll('a[href="https://daftar.ppsd.id"]');
+  daftarButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // membuka link di tab baru tanpa masalah
+      window.open('https://daftar.ppsd.id', '_blank');
+      e.preventDefault();
+    });
+  });
+  // tombol 'Klik di Sini untuk Daftar' menunjukkan info form (simulasi)
+  const btnDaftarSim = document.querySelector('.btn-pink[href="#"]');
+  if(btnDaftarSim && btnDaftarSim.innerText.includes('Klik di Sini untuk Daftar')) {
+    btnDaftarSim.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("🚀 Formulir pendaftaran BKI UNSUDA akan segera hadir! Hubungi kami via WhatsApp untuk bantuan pendaftaran cepat.📱 0857-0883-8201");
+    });
+  }
+</script>
+</body>
+</html>
